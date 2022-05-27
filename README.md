@@ -1,2 +1,2 @@
-# MovieRecommendationSystem
-# I have demonstrated several recommendation algorithms
+MovieRecommendationSystem
+I have demonstrated several recommendation algorithms
