@@ -271,267 +271,46 @@ if st.button('Recommend'):
     rec_total_movies, rec_total_posters = popularity_based(10)
     rec_weight_movies, rec_weight_posters = weighted_mean(10)
 
+    c=[0]*10
+    def util(a, b):
+        c[0], c[1], c[2], c[3], c[4] = st.columns(5)
+        for i in range(5):
+            with c[i]:
+                st.image(a[i])
+                st.text(b[i])
+        c[5], c[6], c[7], c[8], c[9] = st.columns(5)
+        for i in range(5,10):
+            with c[i]:
+                st.image(a[i])
+                st.text(b[i])
+
     st.subheader("Recommendations for {}".format(selected_movie_name))
     st.subheader("# Content Filtering Method")
-    col1, col2, col3, col4, col5 = st.columns(5)
-    with col1:
-        st.image(rec_content_posters[0])
-        st.text(rec_content_movies[0])
-    with col2:
-        st.image(rec_content_posters[1])
-        st.text(rec_content_movies[1])
-    with col3:
-        st.image(rec_content_posters[2])
-        st.text(rec_content_movies[2])
-    with col4:
-        st.image(rec_content_posters[3])
-        st.text(rec_content_movies[3])
-    with col5:
-        st.image(rec_content_posters[4])
-        st.text(rec_content_movies[4])
-
-    col1, col2, col3, col4, col5 = st.columns(5)
-    with col1:
-        st.image(rec_content_posters[5])
-        st.text(rec_content_movies[5])
-    with col2:
-        st.image(rec_content_posters[6])
-        st.text(rec_content_movies[6])
-    with col3:
-        st.image(rec_content_posters[7])
-        st.text(rec_content_movies[7])
-    with col4:
-        st.image(rec_content_posters[8])
-        st.text(rec_content_movies[8])
-    with col5:
-        st.image(rec_content_posters[9])
-        st.text(rec_content_movies[9])
+    util(rec_content_posters,rec_content_movies)
 
     st.subheader("# Collaborative Filtering Method (Item-Item Filtering)")
-    col1, col2, col3, col4, col5 = st.columns(5)
-    with col1:
-        st.image(rec_collaborative_posters[0])
-        st.text(rec_collaborative_movies[0])
-    with col2:
-        st.image(rec_collaborative_posters[1])
-        st.text(rec_collaborative_movies[1])
-    with col3:
-        st.image(rec_collaborative_posters[2])
-        st.text(rec_collaborative_movies[2])
-    with col4:
-        st.image(rec_collaborative_posters[3])
-        st.text(rec_collaborative_movies[3])
-    with col5:
-        st.image(rec_collaborative_posters[4])
-        st.text(rec_collaborative_movies[4])
-
-    col1, col2, col3, col4, col5 = st.columns(5)
-    with col1:
-        st.image(rec_collaborative_posters[5])
-        st.text(rec_collaborative_movies[5])
-    with col2:
-        st.image(rec_collaborative_posters[6])
-        st.text(rec_collaborative_movies[6])
-    with col3:
-        st.image(rec_collaborative_posters[7])
-        st.text(rec_collaborative_movies[7])
-    with col4:
-        st.image(rec_collaborative_posters[8])
-        st.text(rec_collaborative_movies[8])
-    with col5:
-        st.image(rec_collaborative_posters[9])
-        st.text(rec_collaborative_movies[9])
+    util(rec_collaborative_posters, rec_collaborative_movies)
 
     st.subheader("# Hybrid Method (Content + Collaborative)")
-    col1, col2, col3, col4, col5 = st.columns(5)
-    with col1:
-        st.image(rec_hybrid_posters[0])
-        st.text(rec_hybrid_movies[0])
-    with col2:
-        st.image(rec_hybrid_posters[1])
-        st.text(rec_hybrid_movies[1])
-    with col3:
-        st.image(rec_hybrid_posters[2])
-        st.text(rec_hybrid_movies[2])
-    with col4:
-        st.image(rec_hybrid_posters[3])
-        st.text(rec_hybrid_movies[3])
-    with col5:
-        st.image(rec_hybrid_posters[4])
-        st.text(rec_hybrid_movies[4])
-
-    col1, col2, col3, col4, col5 = st.columns(5)
-    with col1:
-        st.image(rec_hybrid_posters[5])
-        st.text(rec_hybrid_movies[5])
-    with col2:
-        st.image(rec_hybrid_posters[6])
-        st.text(rec_hybrid_movies[6])
-    with col3:
-        st.image(rec_hybrid_posters[7])
-        st.text(rec_hybrid_movies[7])
-    with col4:
-        st.image(rec_hybrid_posters[8])
-        st.text(rec_hybrid_movies[8])
-    with col5:
-        st.image(rec_hybrid_posters[9])
-        st.text(rec_hybrid_movies[9])
+    util(rec_hybrid_posters, rec_hybrid_movies)
 
     st.subheader("# Correlation Method")
-    col1, col2, col3, col4, col5 = st.columns(5)
-    with col1:
-        st.image(rec_correlation_posters[0])
-        st.text(rec_correlation_movies[0])
-    with col2:
-        st.image(rec_correlation_posters[1])
-        st.text(rec_correlation_movies[1])
-    with col3:
-        st.image(rec_correlation_posters[2])
-        st.text(rec_correlation_movies[2])
-    with col4:
-        st.image(rec_correlation_posters[3])
-        st.text(rec_correlation_movies[3])
-    with col5:
-        st.image(rec_correlation_posters[4])
-        st.text(rec_correlation_movies[4])
-
-    col1, col2, col3, col4, col5 = st.columns(5)
-    with col1:
-        st.image(rec_correlation_posters[5])
-        st.text(rec_correlation_movies[5])
-    with col2:
-        st.image(rec_correlation_posters[6])
-        st.text(rec_correlation_movies[6])
-    with col3:
-        st.image(rec_correlation_posters[7])
-        st.text(rec_correlation_movies[7])
-    with col4:
-        st.image(rec_correlation_posters[8])
-        st.text(rec_correlation_movies[8])
-    with col5:
-        st.image(rec_correlation_posters[9])
-        st.text(rec_correlation_movies[9])
+    util(rec_correlation_posters, rec_correlation_movies)
 
     st.subheader("# Nearest Neighbours Method")
-    col1, col2, col3, col4, col5 = st.columns(5)
-    with col1:
-        st.image(rec_neighbour_posters[0])
-        st.text(rec_neighbour_movies[0])
-    with col2:
-        st.image(rec_neighbour_posters[1])
-        st.text(rec_neighbour_movies[1])
-    with col3:
-        st.image(rec_neighbour_posters[2])
-        st.text(rec_neighbour_movies[2])
-    with col4:
-        st.image(rec_neighbour_posters[3])
-        st.text(rec_neighbour_movies[3])
-    with col5:
-        st.image(rec_neighbour_posters[4])
-        st.text(rec_neighbour_movies[4])
-
-    col1, col2, col3, col4, col5 = st.columns(5)
-    with col1:
-        st.image(rec_neighbour_posters[5])
-        st.text(rec_neighbour_movies[5])
-    with col2:
-        st.image(rec_neighbour_posters[6])
-        st.text(rec_neighbour_movies[6])
-    with col3:
-        st.image(rec_neighbour_posters[7])
-        st.text(rec_neighbour_movies[7])
-    with col4:
-        st.image(rec_neighbour_posters[8])
-        st.text(rec_neighbour_movies[8])
-    with col5:
-        st.image(rec_neighbour_posters[9])
-        st.text(rec_neighbour_movies[9])
+    util(rec_neighbour_posters, rec_neighbour_movies)
 
     if needed_year > 1961:
         st.subheader("Popular In {}".format(needed_year))
-        col1, col2, col3, col4, col5 = st.columns(5)
-        with col1:
-            st.image(rec_year_posters[0])
-            st.text(rec_year_movies[0])
-        with col2:
-            st.image(rec_year_posters[1])
-            st.text(rec_year_movies[1])
-        with col3:
-            st.image(rec_year_posters[2])
-            st.text(rec_year_movies[2])
-        with col4:
-            st.image(rec_year_posters[3])
-            st.text(rec_year_movies[3])
-        with col5:
-            st.image(rec_year_posters[4])
-            st.text(rec_year_movies[4])
+        c[0], c[1], c[2], c[3], c[4] = st.columns(5)
+        for i in range(5):
+            with c[i]:
+                st.image(rec_year_posters[i])
+                st.text(rec_year_movies[i])
 
     st.subheader("All Time Favourites")
-    col1, col2, col3, col4, col5 = st.columns(5)
-    with col1:
-        st.image(rec_total_posters[0])
-        st.text(rec_total_movies[0])
-    with col2:
-        st.image(rec_total_posters[1])
-        st.text(rec_total_movies[1])
-    with col3:
-        st.image(rec_total_posters[2])
-        st.text(rec_total_movies[2])
-    with col4:
-        st.image(rec_total_posters[3])
-        st.text(rec_total_movies[3])
-    with col5:
-        st.image(rec_total_posters[4])
-        st.text(rec_total_movies[4])
-
-    col1, col2, col3, col4, col5 = st.columns(5)
-    with col1:
-        st.image(rec_total_posters[5])
-        st.text(rec_total_movies[5])
-    with col2:
-        st.image(rec_total_posters[6])
-        st.text(rec_total_movies[6])
-    with col3:
-        st.image(rec_total_posters[7])
-        st.text(rec_total_movies[7])
-    with col4:
-        st.image(rec_total_posters[8])
-        st.text(rec_total_movies[8])
-    with col5:
-        st.image(rec_total_posters[9])
-        st.text(rec_total_movies[9])
+    util(rec_total_posters, rec_total_movies)
 
     st.subheader("# Weighted Mean Method")
-    col1, col2, col3, col4, col5 = st.columns(5)
-    with col1:
-        st.image(rec_weight_posters[0])
-        st.text(rec_weight_movies[0])
-    with col2:
-        st.image(rec_weight_posters[1])
-        st.text(rec_weight_movies[1])
-    with col3:
-        st.image(rec_weight_posters[2])
-        st.text(rec_weight_movies[2])
-    with col4:
-        st.image(rec_weight_posters[3])
-        st.text(rec_weight_movies[3])
-    with col5:
-        st.image(rec_weight_posters[4])
-        st.text(rec_weight_movies[4])
+    util(rec_weight_posters, rec_weight_movies)
 
-    col1, col2, col3, col4, col5 = st.columns(5)
-    with col1:
-        st.image(rec_weight_posters[5])
-        st.text(rec_weight_movies[5])
-    with col2:
-        st.image(rec_weight_posters[6])
-        st.text(rec_weight_movies[6])
-    with col3:
-        st.image(rec_weight_posters[7])
-        st.text(rec_weight_movies[7])
-    with col4:
-        st.image(rec_weight_posters[8])
-        st.text(rec_weight_movies[8])
-    with col5:
-        st.image(rec_weight_posters[9])
-        st.text(rec_weight_movies[9])
